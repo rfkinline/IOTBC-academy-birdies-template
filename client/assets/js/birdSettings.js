@@ -2,14 +2,14 @@
 var colors = Object.values(allColors())
 
 var defaultDNA = {
-    "headcolor" : 10,
-    "mouthColor" : 13,
+    "headColor" : 10,
+    "bellyColor" : 23,
     "eyesColor" : 96,
     "earsColor" : 10,
-    //Cattributes
+    //Birdtributes
     "eyesShape" : 1,
     "decorationPattern" : 1,
-    "decorationMidcolor" : 13,
+    "decorationMidcolor" : 33,
     "decorationSidescolor" : 13,
     "animation" :  1,
     "lastNum" :  1
@@ -18,7 +18,7 @@ var defaultDNA = {
 // when page load
 $( document ).ready(function() {
   $('#dnabody').html(defaultDNA.headColor);
-  $('#dnamouth').html(defaultDNA.mouthColor);
+  $('#dnabelly').html(defaultDNA.bellyColor);
   $('#dnaeyes').html(defaultDNA.eyesColor);
   $('#dnaears').html(defaultDNA.earsColor);
     
@@ -29,13 +29,15 @@ $( document ).ready(function() {
 //   $('#dnaanimation').html(defaultDNA.animation)
 //   $('#dnaspecial').html(defaultDNA.lastNum)
 
-  renderCat(defaultDNA)
+  renderBird(defaultDNA)
+  renderBelly(defaultDNA)
+  renderEyes(defaultDNA)
 });
 
 function getDna(){
     var dna = ''
     dna += $('#dnabody').html()
-    dna += $('#dnamouth').html()
+    dna += $('#dnabelly').html()
     dna += $('#dnaeyes').html()
     dna += $('#dnaears').html()
     dna += $('#dnashape').html()
@@ -48,13 +50,35 @@ function getDna(){
     return parseInt(dna)
 }
 
-function renderCat(dna){
-    headColor(colors[dna.headcolor],dna.headcolor)
-    $('#bodycolor').val(dna.headcolor)
+function renderBird(dna){
+  headColor(colors[dna.headColor],dna.headColor)
+  $('#bodyColor').val(dna.headColor)
 }
 
-// Changing cat colors
-$('#bodycolor').change(()=>{
-    var colorVal = $('#bodycolor').val()
-    headColor(colors[colorVal],colorVal)
+// Changing bird colors
+$('#bodyColor').change(()=>{
+  var colorVal = $('#bodyColor').val()
+  headColor(colors[colorVal],colorVal)
+})
+
+function renderBelly(dna){
+  bellyColor(colors[dna.bellyColor],dna.bellyColor)
+  $('#bellyColor').val(dna.bellyColor)
+}
+
+// Changing belly colors
+$('#bellyColor').change(()=>{
+  var colorVal = $('#bellyColor').val()
+  bellyColor(colors[colorVal],colorVal)
+})
+
+function renderEyes(dna){
+  eyesColor(colors[dna.eyesColor],dna.eyesColor)
+  $('#eyesColor').val(dna.eyesColor)
+}
+
+// Changing eyes colors
+$('#eyesColor').change(()=>{
+  var colorVal = $('#eyesColor').val()
+  eyesColor(colors[colorVal],colorVal)
 })
