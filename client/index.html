@@ -3,7 +3,7 @@
 <!--py -m http.server 8000 -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Academy kitties </title>
+  <title>Birdie </title>
   <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <script src="assets/bootstrap/js/popper.js"></script>
@@ -24,13 +24,17 @@
         <div class="row">
             <div class="col-lg-4 birdBox m-2 light-b-shadow">
                 <div class="bird">
-                    <div class="hair"></div>
+                    <div class="hair">
+                      <div class="hair-left"></div>
+                      <div class="hair-middle"></div>
+                      <div class="hair-right"></div>
+                    </div>
                     <div class="eyes">
                       <div class="left-eye">
-                        <div class="inner-eye"></div>
+                        <span class="inner-eye"></span>
                       </div>
                       <div class="right-eye">
-                        <div class="inner-eye"></div>
+                        <span class="inner-eye"></span>
                       </div>
                     </div>
                     <div class="nose"></div>
@@ -53,7 +57,7 @@
                          <span id="dnabody"></span>
                          <span id="dnabelly"></span>
                          <span id="dnaeyes"></span>
-                         <span id="dnaears"></span>
+                         <span id="dnafeet"></span>
                         
                          <!-- birdtributes -->
                          <span id="dnashape"></span>
@@ -68,7 +72,7 @@
             <div class="col-lg-7 birdtributes m-2 light-b-shadow">
 
             <!-- bird colors -->
-            <div id="birdColors">
+              <div id="birdColors">
                 <div class="form-group">
                     <label for="formControlRange"><b>Head and body</b><span class="badge badge-dark ml-2" id="headCode"></span></label>
                     <input type="range" min="10" max="99" class="form-control-range" id="bodyColor">
@@ -78,11 +82,22 @@
                     <input type="range" min="10" max="99" class="form-control-range" id="bellyColor">
                 </div>
                 <div class="form-group">
-                    <label for="formControlRange"><b>Eyes</b><span class="badge badge-dark ml-2" id="eyesCode"></span></label>
-                    <input type="range" min="10" max="99" class="form-control-range" id="eyesColor">
+                  <label for="formControlRange"><b>Eyes</b><span class="badge badge-dark ml-2" id="eyesCode"></span></label>
+                  <input type="range" min="10" max="99" class="form-control-range" id="eyesColor">
                 </div>
-            </div>
-
+                <div class="form-group">
+                  <label for="formControlRange"><b>Feet</b><span class="badge badge-dark ml-2" id="feetCode"></span></label>
+                  <input type="range" min="10" max="99" class="form-control-range" id="feetColor">
+                </div>
+                <div class="form-group">
+                  <label for="formControlRange"><b>Eye shape</b><span class="badge badge-dark ml-2" id="eyeshapeCode"></span></label>
+                  <input type="range" min="1" max="2" class="form-control-range" id="eyesShape">
+                </div>
+                <div class="form-group">
+                  <label for="formControlRange"><b>Hair shape</b><span class="badge badge-dark ml-2" id="hairvariationCode"></span></label>
+                  <input type="range" min="1" max="2" class="form-control-range" id="hairShape">
+                </div>
+              </div>
             </div>
 
             </div>

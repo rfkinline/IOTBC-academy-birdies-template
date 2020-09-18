@@ -3,12 +3,12 @@ var colors = Object.values(allColors())
 
 var defaultDNA = {
     "headColor" : 10,
-    "bellyColor" : 23,
+    "bellyColor" : 55,
     "eyesColor" : 96,
-    "earsColor" : 10,
+    "feetColor" : 50,
     //Birdtributes
     "eyesShape" : 1,
-    "decorationPattern" : 1,
+    "hairShape" : 1,
     "decorationMidcolor" : 33,
     "decorationSidescolor" : 13,
     "animation" :  1,
@@ -20,18 +20,20 @@ $( document ).ready(function() {
   $('#dnabody').html(defaultDNA.headColor);
   $('#dnabelly').html(defaultDNA.bellyColor);
   $('#dnaeyes').html(defaultDNA.eyesColor);
-  $('#dnaears').html(defaultDNA.earsColor);
-    
-//   $('#dnashape').html(defaultDNA.eyesShape)
-//   $('#dnadecoration').html(defaultDNA.decorationPattern)
-//   $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
-//   $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
-//   $('#dnaanimation').html(defaultDNA.animation)
-//   $('#dnaspecial').html(defaultDNA.lastNum)
+  $('#dnafeet').html(defaultDNA.feetColor);
+  $('#dnashape').html(defaultDNA.eyesShape)
+  $('#dnadecoration').html(defaultDNA.hairShape)
+  $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
+  $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
+  $('#dnaanimation').html(defaultDNA.animation)
+  $('#dnaspecial').html(defaultDNA.lastNum)
 
   renderBird(defaultDNA)
   renderBelly(defaultDNA)
   renderEyes(defaultDNA)
+  renderFeet(defaultDNA)
+  rendereyesShape(defaultDNA)
+  renderhairShape(defaultDNA)
 });
 
 function getDna(){
@@ -39,7 +41,7 @@ function getDna(){
     dna += $('#dnabody').html()
     dna += $('#dnabelly').html()
     dna += $('#dnaeyes').html()
-    dna += $('#dnaears').html()
+    dna += $('#dnafeet').html()
     dna += $('#dnashape').html()
     dna += $('#dnadecoration').html()
     dna += $('#dnadecorationMid').html()
@@ -81,4 +83,33 @@ function renderEyes(dna){
 $('#eyesColor').change(()=>{
   var colorVal = $('#eyesColor').val()
   eyesColor(colors[colorVal],colorVal)
+})
+
+function renderFeet(dna){
+  feetColor(colors[dna.feetColor],dna.feetColor)
+  $('#feetColor').val(dna.feetColor)
+}
+
+// Changing feet colors
+$('#feetColor').change(()=>{
+  var colorVal = $('#feetColor').val()
+  feetColor(colors[colorVal],colorVal)
+})
+
+function renderEyeshape(dna){
+  eyesShape(colors[dna.eyesShape],dna.eyesShape)
+  $('#eyesShape').val(dna.eyesShape)
+}
+$('#eyesShape').change(()=>{
+  var shape = parseInt($('#eyesShape').val())
+  eyesShape(shape)
+})
+
+function renderhairshape(dna){
+  hairShape(colors[dna.hairShape],dna.hairShape)
+  $('#hairShape').val(dna.hairShape)
+}
+$('#hairShape').change(()=>{
+  var shape = parseInt($('#hairShape').val())
+  hairShape(shape)
 })

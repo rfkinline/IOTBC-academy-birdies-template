@@ -7,10 +7,7 @@ html {
     box-sizing: border-box;
     overflow-y: scroll;
 }
-body {
-    background: #607d8b;
- 
-}
+
 body {
     background: #ffeec8;
     height: 100vh;
@@ -26,17 +23,37 @@ body {
     border-radius: 100px;
     position: relative;
   }
-  .bird:after {
+  .hair-left {
     content: '';
     position: absolute;
-    right: 10px;
+    top: 0px;
+    right: 95px;
     background: #fdbd2c;
     width: 80px;
     height: 20px;
+    transform: rotate(165deg);
     border-bottom-right-radius: 30px;
   }
-  .bird .hair {
+  .hair-middle {
+    position: absolute;
+    top: 1px;
+    right: 73px;
     background: #fdbd2c;
+    width: 41px;
+    height: 34px;
+    transform: rotate(120deg);
+    border-bottom-right-radius: 30px;
+  }
+  .hair-right {
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: 22px;
+    background: #fdbd2c;
+    width: 80px;
+    height: 20px;
+    transform: rotate(15deg);
+    border-top-right-radius: 30px;
   }
   .bird .eyes .right-eye {
     background: #000;
@@ -119,7 +136,8 @@ body {
     right: 50%;
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
-    border-bottom: 30px solid black;
+    border-bottom: 30px solid;
+    border-bottom-color: black;
   }
   .bird .feet .left-foot {
     position: absolute;
@@ -127,5 +145,6 @@ body {
     right: 15%;
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
-    border-bottom: 30px solid black;
+    border-bottom: 30px solid;
+    border-bottom-color: black;
   }
